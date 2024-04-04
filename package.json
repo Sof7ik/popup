@@ -5,7 +5,7 @@
   "main": "Popup.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "buildDocs": "jsdoc -c jsdoc.config.json Popup.js"
+    "buildDocs": "jsdoc Popup.js -c jsdoc.config.json -d docs"
   },
   "keywords": [],
   "author": "Leonid Bychkov <bychkov.l47@mail.ru>",
