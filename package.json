@@ -1,11 +1,10 @@
 {
   "name": "popup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "Popup.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "buildDocs": "jsdoc Popup.js -c jsdoc.config.json -d docs"
+    "docs": "jsdoc Popup.js -c jsdoc.config.json"
   },
   "keywords": [],
   "author": "Leonid Bychkov <bychkov.l47@mail.ru>",
