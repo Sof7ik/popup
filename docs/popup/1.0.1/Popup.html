@@ -134,7 +134,305 @@
 
             
 
-            <td class="description last"><p>объект настроек. Его ключи по названиям полностью совпадают с полями класса</p></td>
+            <td class="description last"><p>объект настроек. Его ключи по названиям полностью совпадают с полями класса</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>activeClass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>CSS класс, который отвечает за показ модального окна</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bodyScrollDisabledClass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>CSS класс, отвечающий за блокирование прокручивания страницы</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>closeByClickingOverlay</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Закрывать модальное окно при клике по оверлею?</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>closeByEscape</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Закрывать модальное окно по нажатию кнопки Escape?</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bgDarkener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Инфрормация о затемнителе фона</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DOM Элемент блока с темным фоном</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>activeClass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>CSS класс, отвечающий за показ тёмного блока</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>needCloseConfirm</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Выводить подтверждение о закрытии модального окна?</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -216,7 +514,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// ----- Создание объекта с настройками по умолчанию. ----- // Элемент модального окна передается элементом const modal = document.getElementById("callback-modal"); const popupDefault__Element = new Popup(modal); // Элемент модального окна передается CSS селектором const popupDefault__Selector = new Popup("#callback-modal"); // ----- Создание объекта с кастомизацией настроек const modal = document.getElementById("callback-modal"); const popupCustom = new Popup(modal, {     activeClass: "opened",     bodyScrollDisabledClass: "y-hidden",     closeByClickingOverlay: false,     closeByEscape: false,     bgDarkener: {         element: document.querySelector(".page-darkener"),         activeClass: "opened"     },     needCloseConfirm: true })</code></pre>
+    <pre class="prettyprint"><code>// ----- Создание объекта с настройками по умолчанию. -----// Элемент модального окна передается элементомconst modal = document.getElementById("callback-modal");const popupDefault__Element = new Popup(modal);// Элемент модального окна передается CSS селекторомconst popupDefault__Selector = new Popup("#callback-modal");// ----- Создание объекта с кастомизацией настроекconst modal = document.getElementById("callback-modal");const popupCustom = new Popup(modal, {    activeClass: "opened",    bodyScrollDisabledClass: "y-hidden",    closeByClickingOverlay: false,    closeByEscape: false,    bgDarkener: {        element: document.querySelector(".page-darkener"),        activeClass: "opened"     },     needCloseConfirm: true})</code></pre>
 
 
 
@@ -294,7 +592,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line132">line 132</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -366,151 +664,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line124">line 124</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="_close_MethodBinded"><span class="type-signature">(private) </span>_close_MethodBinded<span class="type-signature"> :function</span></h4>
-
-
-
-
-<div class="description">
-    <p>Закрытие модального окна, привязанное к контексту объекта класса Popup</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">function</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line116">line 116</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="_open_MethodBinded"><span class="type-signature">(private) </span>_open_MethodBinded<span class="type-signature"> :function</span></h4>
-
-
-
-
-<div class="description">
-    <p>Открытие модального окна, привязанное к контексту объекта класса Popup</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">function</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line108">line 108</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line122">line 122</a>
     </li></ul></dd>
     
 
@@ -825,6 +979,78 @@
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="close"><span class="type-signature"></span>close<span class="type-signature"> :function</span></h4>
+
+
+
+
+<div class="description">
+    <p>Закрыть модальное окно</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">function</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line115">line 115</a>
     </li></ul></dd>
     
 
@@ -1366,6 +1592,78 @@
 
         
             
+<h4 class="name" id="open"><span class="type-signature"></span>open<span class="type-signature"> :function</span></h4>
+
+
+
+
+<div class="description">
+    <p>Открыть модальное окно</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">function</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line108">line 108</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
 <h4 class="name" id="popupElem"><span class="type-signature"></span>popupElem<span class="type-signature"> :Element</span></h4>
 
 
@@ -1549,7 +1847,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line334">line 334</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line344">line 344</a>
     </li></ul></dd>
     
 
@@ -1704,7 +2002,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line322">line 322</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line332">line 332</a>
     </li></ul></dd>
     
 
@@ -1758,7 +2056,7 @@
     
 
     
-    <h4 class="name" id="_hidePopup"><span class="type-signature">(private) </span>_hidePopup<span class="signature">(skipClosingBgDarkener)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    <h4 class="name" id="_close_MethodBinded"><span class="type-signature">(private) </span>_close_MethodBinded<span class="signature">(event<span class="signature-attributes">nullable</span>, skipClosingBgDarkener<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {void}</span></h4>
     
 
     
@@ -1766,162 +2064,7 @@
 
 
 <div class="description">
-    <p>Убирает все классы и слушатели событий</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>skipClosingBgDarkener</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>пропускать скрытие заднего фона?</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line346">line 346</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="close"><span class="type-signature"></span>close<span class="signature">(event<span class="signature-attributes">nullable</span>, skipClosingBgDarkener<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Закрыть модальное окно</p>
+    <p>Закрытие модального окна, привязанное к контексту объекта класса Popup</p>
 </div>
 
 
@@ -2076,7 +2219,317 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line299">line 299</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line309">line 309</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="_hidePopup"><span class="type-signature">(private) </span>_hidePopup<span class="signature">(skipClosingBgDarkener)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Убирает все классы и слушатели событий</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>skipClosingBgDarkener</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>пропускать скрытие заднего фона?</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line356">line 356</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">void</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="_open_MethodBinded"><span class="type-signature">(private) </span>_open_MethodBinded<span class="signature">(event)</span><span class="type-signature"> &rarr; {void}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Открытие модального окна, привязанное к контексту объекта класса Popup</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">MouseEvent</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>событие click</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line277">line 277</a>
     </li></ul></dd>
     
 
@@ -2182,7 +2635,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line259">line 259</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line267">line 267</a>
     </li></ul></dd>
     
 
@@ -2288,7 +2741,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line239">line 239</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line247">line 247</a>
     </li></ul></dd>
     
 
@@ -2394,7 +2847,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line250">line 250</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line258">line 258</a>
     </li></ul></dd>
     
 
@@ -2443,161 +2896,6 @@
 
 
         
-            
-
-    
-
-    
-    <h4 class="name" id="open"><span class="type-signature"></span>open<span class="signature">(event)</span><span class="type-signature"> &rarr; {void}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Открыть модальное окно</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">MouseEvent</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>событие click</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line269">line 269</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">void</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
     
 
     
@@ -2619,7 +2917,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Apr 05 2024 16:16:09 GMT+0300 (Москва, стандартное время)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Apr 05 2024 19:24:57 GMT+0300 (Москва, стандартное время)
 </footer>
 
 <script> prettyPrint(); </script>

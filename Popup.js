@@ -101,20 +101,18 @@ class Popup {
     #isOpened = false;
 
     /**
-     * Открытие модального окна, привязанное к контексту объекта класса Popup
-     * @private
+     * Открыть модальное окно
+     * @public
      * @type {function}
      */
-    _open_MethodBinded = function () {
-    };
+    open = this._open_MethodBinded.bind(this);
 
     /**
-     * Закрытие модального окна, привязанное к контексту объекта класса Popup
-     * @private
+     * Закрыть модальное окно
+     * @public
      * @type {function}
      */
-    _close_MethodBinded = function () {
-    };
+    close = this._close_MethodBinded.bind(this);
 
     /**
      * Закрытие модального окна по клику на оверлей, привязанное к контексту объекта класса Popup
@@ -134,32 +132,42 @@ class Popup {
 
     /**
      * Создание объекта модального окна
-     *  @param {(HTMLElement|HTMLDivElement|string)} selector - родительский элемент, который нужно скрывать/показывать. Если **```string```**, то это валидный CSS Selector для **```document.querySelector()```**
-     *  @param {object} options - объект настроек. Его ключи по названиям полностью совпадают с полями класса
+     * @constructor
      *
-     *  @example
-     *  // ----- Создание объекта с настройками по умолчанию. -----
-     *  // Элемент модального окна передается элементом
-     *  const modal = document.getElementById("callback-modal");
-     *  const popupDefault__Element = new Popup(modal);
+     * @param {(HTMLElement|HTMLDivElement|string)} selector - родительский элемент, который нужно скрывать/показывать. Если **```string```**, то это валидный CSS Selector для **```document.querySelector()```**
+     * @param {object} options - объект настроек. Его ключи по названиям полностью совпадают с полями класса
+     * @param {?string} options.activeClass - CSS класс, который отвечает за показ модального окна
+     * @param {?string} options.bodyScrollDisabledClass - CSS класс, отвечающий за блокирование прокручивания страницы
+     * @param {?boolean} options.closeByClickingOverlay - Закрывать модальное окно при клике по оверлею?
+     * @param {?boolean} options.closeByEscape - Закрывать модальное окно по нажатию кнопки Escape?
+     * @param {?object} options.bgDarkener - Инфрормация о затемнителе фона
+     * @param {HTMLElement} options.bgDarkener.element - DOM Элемент блока с темным фоном
+     * @param {string} options.bgDarkener.activeClass - CSS класс, отвечающий за показ тёмного блока
+     * @param {?boolean} options.needCloseConfirm - Выводить подтверждение о закрытии модального окна?
      *
-     *  // Элемент модального окна передается CSS селектором
-     *  const popupDefault__Selector = new Popup("#callback-modal");
+     * @example
+     * // ----- Создание объекта с настройками по умолчанию. -----
+     * // Элемент модального окна передается элементом
+     * const modal = document.getElementById("callback-modal");
+     * const popupDefault__Element = new Popup(modal);
+     *
+     * // Элемент модального окна передается CSS селектором
+     * const popupDefault__Selector = new Popup("#callback-modal");
      *
      *
-     *  // ----- Создание объекта с кастомизацией настроек
-     *  const modal = document.getElementById("callback-modal");
-     *  const popupCustom = new Popup(modal, {
-     *      activeClass: "opened",
-     *      bodyScrollDisabledClass: "y-hidden",
-     *      closeByClickingOverlay: false,
-     *      closeByEscape: false,
-     *      bgDarkener: {
-     *          element: document.querySelector(".page-darkener"),
-     *          activeClass: "opened"
+     * // ----- Создание объекта с кастомизацией настроек
+     * const modal = document.getElementById("callback-modal");
+     * const popupCustom = new Popup(modal, {
+     *     activeClass: "opened",
+     *     bodyScrollDisabledClass: "y-hidden",
+     *     closeByClickingOverlay: false,
+     *     closeByEscape: false,
+     *     bgDarkener: {
+     *         element: document.querySelector(".page-darkener"),
+     *         activeClass: "opened"
      *      },
      *      needCloseConfirm: true
-     *  })
+     * })
      */
     constructor(selector, options = {}) {
         if (typeof selector === "string") {
@@ -261,12 +269,12 @@ class Popup {
     }
 
     /**
-     * Открыть модальное окно
-     * @public
+     * Открытие модального окна, привязанное к контексту объекта класса Popup
+     * @private
      * @param {MouseEvent} event - событие click
      * @return {void}
      * */
-    open(event) {
+    _open_MethodBinded(event) {
         if (this.#hasError) {
             console.error("Объект был создан с ошибкой. Изучите логи в консоли");
             return;
@@ -291,14 +299,14 @@ class Popup {
     }
 
     /**
-     * Закрыть модальное окно
-     * @public
+     * Закрытие модального окна, привязанное к контексту объекта класса Popup
+     * @private
      * @param {?MouseEvent} event - событие click
      * @param {?boolean} skipClosingBgDarkener - пропустить закрытие темной подложки под модальным окном
      * @default false
      * @return {void}
      * */
-    close(event, skipClosingBgDarkener = false) {
+    _close_MethodBinded(event, skipClosingBgDarkener = false) {
         if (this.#hasError) {
             console.error("Объект был создан с ошибкой. Изучите логи в консоли");
             return;
