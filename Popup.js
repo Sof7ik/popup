@@ -40,10 +40,10 @@ class Popup {
 
     /**
      * Кнопки для закрытия модального окна
-     * @type {HTMLCollection}
+     * @type {NodeList}
      * @private
      */
-    #closeButtons = new HTMLCollection();
+    #closeButtons = [];
 
     /**
      * Закрывать модальное окно при клике на оверлей?
