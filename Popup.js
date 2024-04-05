@@ -286,6 +286,8 @@ class Popup {
         if (this.closeByEscape) {
             document.addEventListener("keydown", this._closeByEscapeHandler_MethodBinded)
         }
+
+        this.#isOpened = true;
     }
 
     /**
@@ -360,5 +362,7 @@ class Popup {
         if (this.closeByEscape) {
             document.removeEventListener("keydown", this._closeByEscapeHandler_MethodBinded)
         }
+
+        this.#isOpened = false;
     }
 }
